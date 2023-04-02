@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 import { Container } from "react-bootstrap";
 
@@ -10,7 +11,7 @@ import About from "./pages/About";
 
 const App: React.FC = () => {
   return (
-    <>
+    <ShoppingCartProvider>
       <Navbar />
       <Container className="mb-4">
         <Routes>
@@ -19,7 +20,7 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
         </Routes>
       </Container>
-   </>
+   </ShoppingCartProvider>
   )
 }
 
